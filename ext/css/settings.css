@@ -24,10 +24,88 @@
     --main-content-padding: 10px;
     --sidebar-size: 200px;
     --preview-sidebar-expanded-width: 400px;
+
+    /* Core theme colors */
+    --background-color: #1A1D21;
+    --background-color-light: #22262A;
+    --text-color: #FFFFFF;
+    --text-color-light: #E0E0E0;
+    --text-color-light2: #A0A0A0;
+    --text-color-light3: #808080;
+
+    /* Accent colors */
+    --accent-color: #FF7B7B;
+    --accent-color-dark: #FF6666;
+    --accent-color-light: #FFB3B3;
+    --accent-color-lighter: #FFE5E5;
+    --accent-color-transparent25: rgba(255, 123, 123, 0.25);
+
+    /* Input and form colors */
+    --input-background-color: #2A2F35;
+    --input-border-color: #3A3F45;
+
+    /* Updated separator colors for dark theme */
+    --separator-color1: #333333;
+    --separator-color2: #222222;
+
+    /* Updated scrollbar colors */
+    --scrollbar-thumb-color: #FF7B7B;
+    --scrollbar-track-color: #2A2F35;
+    --scrollbar-inverse-thumb-color: #FF7B7B;
+    --scrollbar-inverse-track-color: #2A2F35;
+
+    /* Updated warning/danger colors to match theme */
+    --warning-color: #F59E0B;
+    --warning-color-light: rgba(245, 158, 11, 0.2);
+    --danger-color: #EF4444;
+    --danger-color-light: rgba(239, 68, 68, 0.2);
+    --danger-color-lighter: rgba(239, 68, 68, 0.1);
+
+    /* Success color */
+    --success-color: #10B981;
+
+    /* Dictionary related colors */
+    --dictionary-import-border-color: #3A3F45;
+    --dictionary-import-border-color-hover: #FF7B7B;
+    --dictionary-import-hover-background-color: rgba(255, 123, 123, 0.1);
+
+    /* Dim/overlay colors */
+    --dim-background-color: rgba(0, 0, 0, 0.7);
+    --content-dimmer-color: rgba(0, 0, 0, 0.3);
+
+    /* Shadow color */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+
+    /* Updated colors to match KikuKey theme */
+    --text-color-light: #E0E0E0;
+    --text-color-light2: #A0A0A0;
+    --text-color-light3: #808080;
+    --accent-color-dark: #FF6666;
+    --accent-color-light: #FFB3B3;
+    --accent-color-lighter: #FFE5E5;
+    --accent-color-transparent25: rgba(255, 123, 123, 0.25);
+
+    /* Updated shadows */
     --shadow-vertical: 0 1px 4px 0 var(--shadow-color), 0 2px 2px 0 var(--shadow-color);
     --shadow-vertical-top: 0 -1px 4px 0 var(--shadow-color), 0 -2px 2px 0 var(--shadow-color);
     --shadow-left: -1px 0 4px 0 var(--shadow-color), -2px 0 2px 0 var(--shadow-color);
     --shadow-right: 1px 0 4px 0 var(--shadow-color), 2px 0 2px 0 var(--shadow-color);
+
+    /* Input styles */
+    --input-border-radius: 8px;
+    --input-height: 40px;
+    --input-width-large: 300px;
+    --input-padding: 12px;
+    --input-font-size: 14px;
+
+    /* Button styles */
+    --button-border-radius: 8px;
+    --button-padding-vertical: 10px;
+    --button-padding-horizontal: 20px;
+    --button-default-text-color: #FFFFFF;
+    --button-default-icon-color: #FFFFFF;
+    --button-default-icon-color-light: #A0A0A0;
+
     --settings-group-horizontal-margin: 0;
     --settings-group-inner-vertical-padding: 0.85em;
     --settings-group-inner-horizontal-padding: 1.5em;
@@ -60,17 +138,13 @@
 
     --link-color: var(--accent-color);
     --link-color-hover: var(--accent-color-dark);
-    --separator-color1: #cccccc;
-    --separator-color2: #eeeeee;
-    --outline-item-background-color: rgba(13, 13, 13, 0);
-    --outline-item-background-color-hover: rgba(13, 13, 13, 0.15);
     --warning-color: #96751c;
     --warning-color-light: #edc75e;
     --dim-background-color: rgba(0, 0, 0, 0.5);
     --content-dimmer-color: rgba(0, 0, 0, 0.1);
-    --advanced-color: #6640be;
-    --advanced-color-lighter: hsl(258, 50%, 75%);
-    --advanced-color-transparent25: rgba(102, 64, 190, 0.5);
+    --advanced-color: #9333EA;
+    --advanced-color-lighter: rgba(147, 51, 234, 0.2);
+    --advanced-color-transparent25: rgba(147, 51, 234, 0.25);
 
     --modal-padding-horizontal: 1em;
     --modal-padding-vertical: 0.625em;
@@ -94,17 +168,7 @@
     --animation-duration: 0s;
 }
 :root[data-theme=dark] {
-    --separator-color1: #333333;
-    --separator-color2: #222222;
-
-    --scrollbar-thumb-color: #444444;
-    --scrollbar-track-color: #2f2f2f;
-    --scrollbar-inverse-thumb-color: #c1c1c1;
-    --scrollbar-inverse-track-color: #f1f1f1;
-
-    --dictionary-import-border-color: #333333;
-    --dictionary-import-border-color-hover: #1c74e9;
-    --dictionary-import-hover-background-color: rgba(191, 209, 255, 0.05);
+    /* These are now set in the main theme */
 }
 
 /* Scrollbars */
@@ -211,19 +275,16 @@ pre {
 /* Headings */
 h1 {
     font-size: 2em;
-    line-height: 1.5em;
-    margin: 0;
-    padding: 0.25em 0 0;
-    font-weight: normal;
-    box-sizing: border-box;
-    border-bottom: var(--thin-border-size) solid var(--separator-color1);
+    font-weight: 500;
+    color: var(--text-color);
+    border-bottom: none;
+    margin-bottom: 1em;
 }
 h2 {
-    font-size: 1.125em;
-    font-weight: normal;
-    line-height: 1.5;
-    padding: 0.9em 0;
-    margin: 0.85em 0 0;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 1.5em 0 1em;
 }
 h3 {
     font-size: 1em;
@@ -433,7 +494,7 @@ a.heading-link-light {
 .outline-item {
     --button-content-color: var(--text-color);
     --button-border-color: transparent;
-    --button-background-color: var(--outline-item-background-color);
+    --button-background-color: transparent;
     --button-shadow: none;
 
     --button-hover-border-color: transparent;
@@ -543,13 +604,10 @@ a.heading-link-light {
 
 /* Settings styles */
 .settings-group {
-    margin: 0 var(--settings-group-horizontal-margin);
-    padding: 0;
-    box-sizing: border-box;
     background-color: var(--background-color-light);
-    box-shadow: var(--shadow-vertical);
-    border-radius: var(--settings-group-border-radius);
-    overflow-x: hidden;
+    border-radius: 12px;
+    padding: 1em;
+    margin-bottom: 1.5em;
 }
 .settings-group.settings-group-top-margin {
     margin-top: 1.0125em;
@@ -813,9 +871,10 @@ select.short-height {
     max-height: 100%;
     width: var(--modal-width);
     height: var(--modal-height);
-    background-color: var(--background-color-light);
+    background-color: var(--background-color);
     flex: 0 1 auto;
-    border-radius: 0.5em;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transform: translate(0, 0);
     transition:
         transform var(--animation-duration2) ease-out,
@@ -863,6 +922,7 @@ select.short-height {
     width: 100%;
     align-items: center;
     box-sizing: border-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .modal-title {
     font-size: 1.125em;
@@ -878,6 +938,7 @@ select.short-height {
     align-items: flex-end;
     justify-items: flex-end;
     justify-content: flex-end;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .modal-footer>* {
     margin-right: var(--modal-button-spacing);
@@ -1213,12 +1274,9 @@ button.fab-button>.icon-button-inner>.icon {
 
 /* Tabs */
 .tabs-container {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: stretch;
-    margin-left: calc(-1 * var(--modal-padding-horizontal));
-    margin-right: calc(-1 * var(--modal-padding-horizontal));
-    position: relative;
+    background-color: var(--background-color-light);
+    border-radius: 8px;
+    padding: 0.5em;
 }
 .tabs {
     flex: 1 1 auto;
@@ -1252,6 +1310,8 @@ button.fab-button>.icon-button-inner>.icon {
     position: relative;
     height: 100%;
     padding: 0 1em;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
 }
 .tab-inner::before {
     content: '';
@@ -1314,7 +1374,7 @@ button.fab-button>.icon-button-inner>.icon {
     transition: color var(--animation-duration) ease-in-out;
 }
 .tab>input[type='radio']:checked~.tab-inner>.tab-label {
-    color: var(--accent-color);
+    color: white;
 }
 .tabs-right {
     flex: 0 0 auto;
@@ -2178,8 +2238,13 @@ button.hotkey-list-item-enabled-button[data-scope-count='0'] {
     height: var(--badge-size);
     margin: 0;
     padding: 0;
-    border-radius: 50%;
+    border-radius: 12px;
     box-shadow: var(--shadow-vertical);
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
 }
 .badge:not([hidden]) {
     display: block;
@@ -2658,4 +2723,22 @@ button.hotkey-list-item-enabled-button[data-scope-count='0'] {
     :root:not([data-loaded=true]) {
         background-color: #1e1e1e;
     }
+}
+
+/* Updated sidebar navigation */
+.outline-item {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 4px 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.outline-item:hover {
+    background-color: rgba(255, 123, 123, 0.1);
+    transform: translateX(2px);
+}
+
+.outline-item.active {
+    background-color: var(--accent-color);
+    color: white;
 }

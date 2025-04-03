@@ -14,4 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+
+// Import the background main script
 import './js/background/background-main.js';
+
+// Simple service worker that just imports the main background script
+// No additional event listeners needed for this extension

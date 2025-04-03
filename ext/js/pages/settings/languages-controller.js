@@ -16,7 +16,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {querySelectorNotNull} from '../../dom/query-selector.js';
+import { querySelectorNotNull } from '../../dom/query-selector.js';
 
 export class LanguagesController {
     /**
@@ -32,6 +32,16 @@ export class LanguagesController {
         const languages = await this._settingsController.application.api.getLanguageSummaries();
         languages.sort((a, b) => a.name.localeCompare(b.name, 'en'));
         this._fillSelect(languages);
+
+        // Add event listener for language change
+        const selectElement = querySelectorNotNull(document, '#language-select');
+        selectElement.addEventListener('change', this._onLanguageChange.bind(this));
+
+        // Set initial language value
+        const options = await this._settingsController.getOptions();
+        if (options.general.language) {
+            document.documentElement.setAttribute('data-language', options.general.language);
+        }
     }
 
     /**
@@ -45,5 +55,13 @@ export class LanguagesController {
             option.text = `${name} (${iso})`;
             selectElement.appendChild(option);
         }
+    }
+
+    /**
+     * @param {Event} event
+     */
+    _onLanguageChange(event) {
+        const selectElement = /** @type {HTMLSelectElement} */ (event.target);
+        document.documentElement.setAttribute('data-language', selectElement.value);
     }
 }

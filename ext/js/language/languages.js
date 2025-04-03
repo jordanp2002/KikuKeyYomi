@@ -74,6 +74,9 @@ export function getAllLanguageTextProcessors() {
  * @returns {boolean}
  */
 export function isTextLookupWorthy(text, language) {
+    // Only Japanese is supported
+    if (language !== 'ja') return false;
+    
     const descriptor = languageDescriptorMap.get(language);
     if (typeof descriptor === 'undefined') { return false; }
     return typeof descriptor.isTextLookupWorthy === 'undefined' || descriptor.isTextLookupWorthy(text);

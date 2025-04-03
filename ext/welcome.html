@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Welcome to Yomitan!</title>
+    <title>Welcome to KikuKey!</title>
     <link rel="icon" type="image/png" href="/images/icon16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="/images/icon19.png" sizes="19x19">
     <link rel="icon" type="image/png" href="/images/icon32.png" sizes="32x32">
@@ -24,14 +24,14 @@
 
     <span tabindex="-1" id="content-scroll-focus"></span>
 
-    <h1>Welcome to Yomitan!</h1>
+    <h1>Welcome to the KikuKey Dictionary</h1>
 
     <h2><strong>Recommended Permissions &#40;Important&#41;</strong></h2>
     <div class="settings-group">
         <div class="settings-item"><div class="settings-item-inner">
             <div class="settings-item-left">
                 <div class="settings-item-label">Enable recommended permissions</div>
-                <div class="settings-item-description">This will allow Yomitan to scan text from most sites.</div>
+                <div class="settings-item-description">This will allow the dictionary to scan text from most sites.</div>
             </div>
             <div class="settings-item-right">
                 <label class="toggle"><input type="checkbox" id="recommended-permissions-toggle" data-origin="&lt;all_urls&gt;"><span class="toggle-body"><span class="toggle-track"></span><span class="toggle-knob"></span></span></label>
@@ -40,7 +40,7 @@
         <div class="settings-item"><div class="settings-item-inner">
             <div class="settings-item-left">
                 <div class="settings-item-label">Enable optional permissions</div>
-                <div class="settings-item-description">This will allow Yomitan to read the clipboard and communicate with external programs.</div>
+                <div class="settings-item-description">This will allow the dictionary to read the clipboard and communicate with external programs.</div>
             </div>
             <div class="settings-item-right">
                 <label class="toggle"><input type="checkbox" id="optional-permissions-toggle" data-origin="&lt;all_urls&gt;"><span class="toggle-body"><span class="toggle-track"></span><span class="toggle-knob"></span></span></label>
@@ -52,7 +52,7 @@
                 <div class="settings-item-description" data-show-for-browser="firefox firefox-mobile">Further configuration is available on the <a href="/permissions.html" rel="noopener">Permissions page</a> and the web browser's extension settings page.</div>
                 <div class="danger-text margin-above" id="permissions-disabled" hidden><strong>Yomitan features will be limited if the recommended permissions are not enabled.</strong></div>
                 <div class="success-text margin-above" id="recommended-permissions-enabled" hidden><strong>Essential Yomitan features are available.</strong></div>
-                <div class="success-text margin-above" id="full-permissions-enabled" hidden><strong>All Yomitan features are available.</strong></div>
+                <div class="success-text margin-above" id="full-permissions-enabled" hidden><strong>All dictionary features are available.</strong></div>
                 <div id="recommended-permissions-error" class="margin-above danger-text" hidden></div>
             </div>
         </div></div>
@@ -182,7 +182,10 @@
         </div></a>
     </div>
 
-    <div class="footer-padding"></div>
+    <footer style="text-align: center; padding: 20px; color: #666; border-top: 1px solid #ddd; margin-top: 40px;">
+        <p>KikuKey Dictionary is a fork of <a href="https://github.com/yomidevs/yomitan" target="_blank" rel="noopener">Yomitan</a>.</p>
+        <p>Special thanks to the developers of Yomichan and Yomitan for their incredible work.</p>
+    </footer>
 
 </div>
 <div class="content-right"></div>
@@ -203,6 +206,7 @@
         </div>
     </div>
 </div></div>
+
 
 <div id="popup-menus"></div>
 

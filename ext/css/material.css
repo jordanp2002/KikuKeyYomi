@@ -18,43 +18,106 @@
 
 /* Variables */
 :root {
+    /* Core sizing and timing */
     --font-size-no-units: 14;
     --font-size: calc(1px * var(--font-size-no-units));
-
     --font-size-small-no-units: 12;
     --font-size-small: calc(1em * var(--font-size-small-no-units) / var(--font-size-no-units));
-
     --line-height-no-units: 20;
     --line-height: calc(var(--line-height-no-units) / var(--font-size-no-units));
-
-    --animation-duration: 0.125s;
+    --animation-duration: 0.2s;
     --animation-duration2: calc(var(--animation-duration) * 2);
 
+    /* Component sizing */
     --checkbox-size: calc(16em / var(--font-size-no-units));
     --icon-button-size: calc(36em / var(--font-size-no-units));
     --radio-size: calc(20em / var(--font-size-no-units));
     --toggle-size: calc(16em / var(--font-size-no-units));
 
+    /* Input styling */
     --input-font-size-no-units: 1;
     --input-font-size: calc(1em * var(--input-font-size-no-units));
     --input-spacing: calc(10em / var(--font-size-no-units));
     --input-width: calc(100em / (var(--font-size-no-units) * var(--input-font-size-no-units)) - var(--input-spacing) / 2);
     --input-width-large: calc(200em / (var(--font-size-no-units) * var(--input-font-size-no-units)));
-    --input-height: calc(32em / (var(--font-size-no-units) * var(--input-font-size-no-units)));
-    --input-border-radius: 0.25em;
+    --input-height: calc(40em / (var(--font-size-no-units) * var(--input-font-size-no-units)));
+    --input-border-radius: 8px;
     --textarea-line-height: 1.25em;
     --textarea-padding: 0.5em;
 
+    /* Core theme colors */
+    --background-color: #111827;
+    --background-color-light: #1F2937;
+    --background-color-dark1: #0B1119;
+
+    /* Text colors */
+    --text-color: #FFFFFF;
+    --text-color-light1: #E0E0E0;
+    --text-color-light2: #A0A0A0;
+    --text-color-light3: #808080;
+    --text-color-light4: #606060;
+
+    /* Accent colors */
+    --accent-color: #FF7B7B;
+    --accent-color-light: #FF9494;
+    --accent-color-lighter: #FFB3B3;
+    --accent-color-lightest: #FFD1D1;
+    --accent-color-dark: #FF6666;
+    --accent-color-transparent0: rgba(255, 123, 123, 0);
+    --accent-color-transparent5: rgba(255, 123, 123, 0.05);
+    --accent-color-transparent25: rgba(255, 123, 123, 0.25);
+
+    /* Status colors */
+    --danger-color: #EF4444;
+    --danger-color-light: #F87171;
+    --danger-color-lighter: #FCA5A5;
+    --danger-color-lightest: #FEE2E2;
+    --danger-color-transparent0: rgba(239, 68, 68, 0);
+    --danger-color-transparent5: rgba(239, 68, 68, 0.05);
+    --danger-color-transparent25: rgba(239, 68, 68, 0.25);
+
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
+
+    /* UI element colors */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-color-off: rgba(0, 0, 0, 0);
+    --shadow-color-light: rgba(0, 0, 0, 0.15);
+
+    /* Input colors */
+    --input-background-color: #2A2F35;
+    --input-background-color-dark: #333940;
+    --input-background-color-darker: #3A424A;
+    --input-outline-color: var(--accent-color);
+
+    /* Button colors */
+    --button-default-text-color: #FFFFFF;
+    --button-default-border-color: #3A3F45;
+    --button-default-icon-color: #FFFFFF;
+    --button-default-icon-color-light: #A0A0A0;
+
+    /* Component-specific colors */
+    --checkbox-checked-color: var(--accent-color);
+    --checkbox-unchecked-color: #A0A0A0;
+    --checkbox-check-color: var(--background-color);
+    --checkbox-disabled-color: var(--text-color-light3);
+
+    --toggle-track-color: #3A3F45;
+    --toggle-knob-color: var(--text-color);
+
+    /* Menu colors */
+    --menu-item-hover-color: rgba(255, 123, 123, 0.1);
+    --menu-item-active-color: rgba(255, 123, 123, 0.2);
+
+    /* Border and shadow styles */
+    --button-border-radius: 8px;
+    --button-default-shadow-params: 0 2px 4px 0;
+    --thin-border-size: 1px;
+    --menu-border-radius: 12px;
+    --menu-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+
     --material-arrow-dimension1: calc(5em / var(--font-size-no-units));
     --material-arrow-dimension2: calc(10em / var(--font-size-no-units));
-
-    --button-border-radius: 0.3em;
-    --button-default-shadow-params: 0 0.0625em 0.125em 0;
-
-    --thin-border-size: calc(1em / var(--font-size-no-units));
-
-    --menu-border-radius: 0.3em;
-    --menu-shadow: 0 1px 3px 1px var(--shadow-color), 0 2px 4px 3px var(--shadow-color);
 
     --selectable-indicator-transition1:
         transform 0s ease-in-out var(--animation-duration2),
@@ -67,129 +130,95 @@
         opacity var(--animation-duration2) ease-in-out,
         visibility var(--animation-duration2) ease-in-out;
 
-    --text-color: #222222;
-    --text-color-light1: #555555;
-    --text-color-light2: #666666;
-    --text-color-light3: #777777;
-    --text-color-light4: #888888;
-    --background-color: #f8f9fa;
-    --background-color-light: #ffffff;
-    --background-color-dark1: #eeeeee;
-
-    --shadow-color: rgba(0, 0, 0, 0.185);
-    --shadow-color-off: rgba(0, 0, 0, 0);
-    --shadow-color-light: rgba(0, 0, 0, 0.085);
-
-    --accent-color: #1a73e8;
-    --accent-color-light: #4a91ed;
-    --accent-color-lighter: #8db9f4;
-    --accent-color-lightest: #a7c9f6;
-    --accent-color-dark: #1060c0;
-    --accent-color-transparent0: rgba(28, 116, 233, 0);
-    --accent-color-transparent5: rgba(28, 116, 233, 0.05);
-    --accent-color-transparent25: rgba(28, 116, 233, 0.25);
-
-    --danger-color: #c83c28;
-    --danger-color-light: #dd6755;
-    --danger-color-lighter: #e68d7f;
-    --danger-color-lightest: #eeb3aa;
-    --danger-color-transparent0: rgba(200, 60, 40, 0);
-    --danger-color-transparent5: rgba(200, 60, 40, 0.05);
-    --danger-color-transparent25: rgba(200, 60, 40, 0.25);
-
-    --success-color: #51ab30;
+    --selectable-indicator-color: rgba(160, 160, 160, 0.25);
 
     --disabled-color: #aaaaaa;
     --disabled-color-light: #dddddd;
     --disabled-color-lighter: #eeeeee;
 
-    --input-background-color: #f2f2f2;
-    --input-background-color-dark: #dddddd;
-    --input-background-color-darker: #cccccc;
-    --input-outline-color: var(--text-color);
-
-    --button-default-text-color: #ffffff;
-    --button-default-border-color: #cccccc;
-    --button-default-icon-color: #333333;
-    --button-default-icon-color-light: #666666;
-
-    --checkbox-checked-color: var(--accent-color);
-    --checkbox-unchecked-color: #666666;
-    --checkbox-check-color: var(--background-color-light);
-    --checkbox-disabled-color: var(--disabled-color);
-
-    --toggle-track-color: #cccccc;
-    --toggle-knob-color: var(--background-color-light);
-
-    --selectable-indicator-color: rgba(160, 160, 160, 0.25);
-
-    --menu-item-hover-color: #bbbbbb;
-    --menu-item-active-color: #aaaaaa;
+    --button-padding-vertical: 0.5em;
+    --button-padding-horizontal: 1em;
 }
 :root[data-theme=dark] {
-    --text-color: #d4d4d4;
-    --text-color-light1: #aaaaaa;
-    --text-color-light2: #999999;
-    --text-color-light3: #888888;
-    --text-color-light4: #777777;
-    --background-color: #1e1e1e;
-    --background-color-light: #0a0a0a;
-    --background-color-dark1: #333333;
+    /* Text colors */
+    --text-color: #FFFFFF;
+    --text-color-light1: #E0E0E0;
+    --text-color-light2: #A0A0A0;
+    --text-color-light3: #808080;
+    --text-color-light4: #606060;
 
-    --shadow-color: rgba(105, 105, 105, 0.185);
-    --shadow-color-off: rgba(255, 255, 255, 0);
-    --shadow-color-light: rgba(255, 255, 255, 0.085);
+    /* Core theme colors */
+    --background-color: #111827;
+    --background-color-light: #1F2937;
+    --background-color-dark1: #0B1119;
 
-    --accent-color: #4a91ed;
-    --accent-color-light: #1a73e8;
-    --accent-color-lighter: #135dbe;
-    --accent-color-lightest: #0e4690;
-    --accent-color-transparent0: rgb(78, 172, 253, 0);
-    --accent-color-transparent5: rgb(78, 172, 253, 0.05);
-    --accent-color-transparent25: rgb(78, 172, 253, 0.25);
+    /* Shadow colors */
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-color-off: rgba(0, 0, 0, 0);
+    --shadow-color-light: rgba(0, 0, 0, 0.15);
 
-    --danger-color: #dd6755;
-    --danger-color-light: #c83c28;
-    --danger-color-lighter: #9e301f;
-    --danger-color-lightest: #732317;
-    --danger-color-transparent0: rgba(221, 103, 85, 0);
-    --danger-color-transparent5: rgba(221, 103, 85, 0.05);
-    --danger-color-transparent25: rgba(221, 103, 85, 0.25);
+    /* Accent colors */
+    --accent-color: #FF7B7B;
+    --accent-color-light: #FF9494;
+    --accent-color-lighter: #FFB3B3;
+    --accent-color-lightest: #FFD1D1;
+    --accent-color-dark: #FF6666;
+    --accent-color-transparent0: rgba(255, 123, 123, 0);
+    --accent-color-transparent5: rgba(255, 123, 123, 0.05);
+    --accent-color-transparent25: rgba(255, 123, 123, 0.25);
 
-    --success-color: #75cf54;
+    /* Status colors */
+    --danger-color: #EF4444;
+    --danger-color-light: #F87171;
+    --danger-color-lighter: #FCA5A5;
+    --danger-color-lightest: #FEE2E2;
+    --danger-color-transparent0: rgba(239, 68, 68, 0);
+    --danger-color-transparent5: rgba(239, 68, 68, 0.05);
+    --danger-color-transparent25: rgba(239, 68, 68, 0.25);
 
-    --disabled-color: #444444;
-    --disabled-color-light: #585858;
-    --disabled-color-lighter: #777777;
+    /* Success and warning colors */
+    --success-color: #10B981;
+    --warning-color: #F59E0B;
 
-    --input-background-color: #2f2f2f;
-    --input-background-color-dark: #383838;
-    --input-background-color-darker: #484848;
-    --input-outline-color: var(--text-color);
+    /* Disabled colors */
+    --disabled-color: #3A3F45;
+    --disabled-color-light: #2A2F35;
+    --disabled-color-lighter: #22262A;
 
-    --button-default-text-color: #000000;
-    --button-default-border-color: #333333;
-    --button-default-icon-color: #cccccc;
-    --button-default-icon-color-light: #999999;
+    /* Input colors */
+    --input-background-color: #2A2F35;
+    --input-background-color-dark: #333940;
+    --input-background-color-darker: #3A424A;
+    --input-outline-color: var(--accent-color);
 
-    --checkbox-unchecked-color: #999999;
+    /* Button colors */
+    --button-default-text-color: #FFFFFF;
+    --button-default-border-color: #3A3F45;
+    --button-default-icon-color: #FFFFFF;
+    --button-default-icon-color-light: #A0A0A0;
 
-    --toggle-track-color: #cccccc;
-    --toggle-knob-color: #ffffff;
+    /* Component colors */
+    --checkbox-unchecked-color: #A0A0A0;
+    --toggle-track-color: #3A3F45;
+    --toggle-knob-color: #FFFFFF;
 
-    --selectable-indicator-color: rgba(100, 100, 100, 0.25);
+    /* Menu colors */
+    --menu-item-hover-color: rgba(255, 123, 123, 0.1);
+    --menu-item-active-color: rgba(255, 123, 123, 0.2);
 
-    --menu-item-hover-color: #333333;
-    --menu-item-active-color: #444444;
+    /* Indicator colors */
+    --selectable-indicator-color: rgba(255, 123, 123, 0.15);
 }
 
 
 /* Root styles */
 :root {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: var(--font-size);
     line-height: var(--line-height);
     height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 body {
     margin: 0;
@@ -319,6 +348,7 @@ label.checkbox {
     width: 1em;
     height: 1em;
     position: relative;
+    transition: all var(--animation-duration) ease-in-out;
 }
 .checkbox>input[type=checkbox]:disabled+.checkbox-body {
     cursor: default;
@@ -462,6 +492,7 @@ label.toggle {
     width: 2em;
     height: 1em;
     position: relative;
+    transition: all var(--animation-duration) ease-in-out;
 }
 .toggle-track {
     display: block;
@@ -472,7 +503,6 @@ label.toggle {
     bottom: 0.125em;
     background-color: var(--toggle-track-color);
     border-radius: 0.4375em;
-    transition: background-color var(--animation-duration) ease-in-out;
 }
 .toggle-knob {
     display: block;
@@ -483,12 +513,7 @@ label.toggle {
     height: 1em;
     background-color: var(--toggle-knob-color);
     border-radius: 0.5em;
-    box-shadow:
-        0 0.0625em 0.25em 0 var(--shadow-color),
-        0 0.125em 0.125em 0 var(--shadow-color);
-    transition:
-        transform var(--animation-duration) ease-in-out,
-        background-color var(--animation-duration) ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .toggle-body>.toggle-knob::after {
     position: absolute;
@@ -527,7 +552,10 @@ label.toggle {
     visibility: hidden;
     transition: var(--selectable-indicator-transition1);
 }
-.toggle>input[type=checkbox]:focus-visible+.toggle-body>.toggle-knob::after {
+.toggle>input[type=checkbox]:focus-visible>.toggle-body>.toggle-knob::after,
+.toggle>input[type=checkbox]:focus-visible:active>.toggle-body>.toggle-knob::after,
+.toggle>input[type=checkbox]:focus>.toggle-body>.toggle-knob::after,
+.toggle>input[type=checkbox]:focus:active>.toggle-body>.toggle-knob::after {
     transform: scale(1);
     opacity: 1;
     visibility: visible;
@@ -590,6 +618,7 @@ label.radio {
     position: relative;
     width: var(--radio-size);
     height: var(--radio-size);
+    transition: all var(--animation-duration) ease-in-out;
 }
 .radio>input[type=radio]:disabled+.radio-body {
     cursor: default;
@@ -722,6 +751,7 @@ select {
     cursor: pointer;
     color: var(--text-color);
     font-size: var(--input-font-size);
+    transition: all var(--animation-duration) ease-in-out;
 }
 select::-ms-expand {
     display: none;
@@ -745,6 +775,7 @@ input[type=password] {
     appearance: textfield;
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
+    transition: all var(--animation-duration) ease-in-out;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -767,6 +798,7 @@ textarea {
     border-radius: var(--input-border-radius);
     line-height: var(--textarea-line-height);
     border: var(--thin-border-size) solid var(--input-background-color);
+    transition: all var(--animation-duration) ease-in-out;
 }
 select:invalid,
 textarea:invalid,
@@ -903,7 +935,7 @@ button,
 
     --button-active-content-color: var(--button-content-color);
     --button-active-border-color: var(--button-active-background-color);
-    --button-active-background-color: var(--accent-color-lighter);
+    --button-active-background-color: var(--accent-color-dark);
     --button-active-shadow: var(--button-default-shadow-params) var(--shadow-color);
 
     --button-disabled-content-color: var(--button-default-text-color);
@@ -923,14 +955,11 @@ button,
     border-style: solid;
     border-radius: var(--button-border-radius);
     padding: var(--button-padding-vertical) var(--button-padding-horizontal);
-    font-weight: bold;
+    font-weight: 500;
     font-size: inherit;
     font-family: inherit;
     cursor: pointer;
-    transition:
-        background-color var(--animation-duration) ease-in-out,
-        box-shadow var(--animation-duration) ease-in-out,
-        border-color var(--animation-duration) ease-in-out;
+    transition: all var(--animation-duration) ease-in-out;
     -webkit-tap-highlight-color: transparent;
 
     color: var(--button-current-content-color);
@@ -1235,6 +1264,7 @@ button.icon-button>.icon-button-inner {
 /* Popup menu */
 #popup-menus {
     position: absolute;
+    background-color: var(--background-color);
 }
 .popup-menu-container {
     position: fixed;
@@ -1245,6 +1275,7 @@ button.icon-button>.icon-button-inner {
     z-index: 1001;
     outline: none;
     overflow: hidden;
+    background-color: var(--background-color);
 }
 .popup-menu {
     position: absolute;
@@ -1259,6 +1290,7 @@ button.icon-button>.icon-button-inner {
     padding: 0.5em 0;
     min-width: 8em;
     overflow: auto;
+    transition: all var(--animation-duration) ease-in-out;
 }
 .popup-menu-body {
     display: flex;

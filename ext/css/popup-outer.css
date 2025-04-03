@@ -29,7 +29,7 @@ iframe.yomitan-popup {
     box-sizing: border-box;
 }
 iframe.yomitan-popup[data-theme=dark] {
-    background-color: #1e1e1e;
+    background-color: #8b1818;
     border-color: #666666;
 }
 iframe.yomitan-popup[data-outer-theme=dark] {
